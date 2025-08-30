@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- HEADER MODERNO -->
+    <header class="main-header">
+        <div class="header-content">
+            <h1>
+                <span class="logo-emoji">📝</span>
+                Lista de Tarefas
+            </h1>
+            <nav>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="casa">Casa</a></li>
+                    <li><a href="trabalho">Trabalho</a></li>
+                    <li><a href="escola">Escola</a></li>
+                    <li><a href="faculdade">Faculdade</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div id="form-toDo">
+            <form class="form-itens" onsubmit="event.preventDefault(); adicionar();">
+                <label for="tarefas-selecao">Categoria:</label>
+                <select id="tarefas-selecao">
+                    <option value="todas">Selecione Cat.</option>
+                    <option value="casa">Casa</option>
+                    <option value="trabalho">Trabalho</option>
+                    <option value="escola">Escola</option>
+                    <option value="faculdade">Faculdade</option>
+                </select>
+                <label for="descricao">Descrição:</label>
+                <input id="descricao" type="text" placeholder="Descreva a tarefa..." required>
+                <label for="hora">Hora:</label>
+                <input id="hora" type="time" required>
+                <label for="data">Data:</label>
+                <input id="data" type="date" required>
+                <label for="prioridade">Prioridade:</label>
+                <select class="prioridade" id="prioridade">
+                    <option value="selecione">Selecione</option>
+                    <option value="baixa">Baixa</option>
+                    <option value="media">Média</option>
+                    <option value="alta">Alta</option>
+                </select>
+                <button type="submit" class="btn-adiciona">Adicionar</button>
+            </form>
+        </div>
+
+        <div id="tarefas">
+            <ul class="lista-tarefas"></ul>
+        </div>
+
+        <div id="caixas-status">
+            <div id="caixa-concluidas" class="caixa-status">
+                <h3>Tarefas Concluídas</h3>
+                <ul id="lista-concluidas"></ul>
+            </div>
+            <div id="caixa-pendentes" class="caixa-status">
+                <h3>Tarefas Pendentes</h3>
+                <ul id="lista-pendentes"></ul>
+            </div>
+            <div id="caixa-atrasadas" class="caixa-status">
+                <h3>Tarefas Atrasadas</h3>
+                <ul id="lista-atrasadas"></ul>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,360 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #e8f0fe;
+    min-height: 100vh;
+    color: #1a237e;
+}
+
+/* Modern Header */
+.main-header {
+    background: #1976d2;
+    padding: 0 0 18px 0;
+    box-shadow: 0 2px 12px rgba(25, 118, 210, 0.08);
+    border-radius: 0 0 18px 18px;
+}
+
+.header-content {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 24px 24px 0 24px;
+}
+
+.logo-emoji {
+    font-size: 1.2em;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+.main-header h1 {
+    color: #fff;
+    font-size: 2.2em;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    text-shadow: 0 2px 8px rgba(25, 118, 210, 0.10);
+}
+
+.main-header nav ul {
+    display: flex;
+    gap: 18px;
+    list-style: none;
+    padding: 0;
+}
+
+.main-header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.08em;
+    padding: 7px 18px;
+    border-radius: 6px;
+    transition: background 0.2s, color 0.2s;
+}
+
+.main-header nav ul li a:hover,
+.main-header nav ul li a.active {
+    background: #fff;
+    color: #1976d2;
+}
+
+@media (max-width: 900px) {
+    .header-content {
+        padding: 18px 4vw 0 4vw;
+    }
+    .main-header nav ul {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+}
+
+main.container {
+    max-width: 900px;
+    margin: 40px auto;
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(25, 118, 210, 0.10);
+    padding: 32px 24px 24px 24px;
+}
+
+#form-toDo {
+    margin-bottom: 32px;
+    background: #e3f2fd;
+    border-radius: 12px;
+    padding: 24px 18px;
+    box-shadow: 0 2px 8px rgba(25, 118, 210, 0.06);
+}
+
+.form-itens {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    align-items: center;
+}
+
+.form-itens label {
+    font-weight: 500;
+    color: #1565c0;
+}
+
+.form-itens input,
+.form-itens select {
+    padding: 8px 12px;
+    border: 1px solid #90caf9;
+    border-radius: 6px;
+    background: #f5faff;
+    font-size: 1em;
+    transition: border 0.2s;
+}
+
+.form-itens input:focus,
+.form-itens select:focus {
+    border-color: #1976d2;
+    outline: none;
+}
+
+.btn-adiciona {
+    margin-top: 18px;
+    padding: 10px 28px;
+    background: #037a39;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(25, 118, 210, 0.10);
+    transition: background 0.2s, transform 0.2s;
+}
+
+.btn-adiciona:hover {
+    background: #1565c0;
+    transform: translateY(-2px) scale(1.03);
+}
+
+#tarefas {
+    margin-bottom: 32px;
+}
+
+.lista-tarefas {
+    list-style: none;
+    margin-top: 10px;
+}
+
+.lista-tarefas li {
+    background: #e3f2fd;
+    margin-bottom: 12px;
+    padding: 14px 16px;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(25, 118, 210, 0.06);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.05em;
+    transition: background 0.2s;
+}
+
+.lista-tarefas li.concluida {
+    background: #b3e5fc !important;
+    color: #01579b;
+}
+
+.lista-tarefas li.atrasada1h {
+    background: #ffe082 !important;
+    color: #7a4f01;
+}
+
+.lista-tarefas li.atrasada2h {
+    background: #ffcdd2 !important;
+    color: #b71c1c;
+}
+
+.lista-tarefas button {
+    margin-left: 8px;
+    padding: 6px 14px;
+    border: none;
+    border-radius: 6px;
+    background: #bbdefb;
+    color: #1565c0;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+
+.lista-tarefas button:hover {
+    background: #1976d2;
+    color: #fff;
+}
+
+#caixas-status {
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+    margin-top: 24px;
+    justify-content: space-between;
+}
+
+.caixa-status {
+    flex: 1 1 260px;
+    min-width: 240px;
+    background: #e3f2fd;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(25, 118, 210, 0.06);
+    padding: 18px 14px 14px 14px;
+    margin-bottom: 18px;
+    display: flex;
+    flex-direction: column;
+}
+
+#caixa-concluidas {
+    border-top: 5px solid #037a39;
+}
+#caixa-pendentes {
+    border-top: 5px solid #e28935;
+}
+#caixa-atrasadas {
+    border-top: 5px solid #e53935;
+}
+
+.caixa-status h3 {
+    margin-bottom: 12px;
+    font-size: 1.1em;
+    color: #1976d2;
+    letter-spacing: 0.5px;
+}
+
+.caixa-status ul {
+    list-style: none;
+    padding: 0;
+}
+
+.caixa-status li {
+    background: #fff;
+    color: #222;
+    margin-bottom: 10px;
+    padding: 10px 12px;
+    border-radius: 6px;
+    font-size: 1em;
+    box-shadow: 0 1px 4px rgba(25, 118, 210, 0.04);
+    word-break: break-word;
+}
+
+.caixa-status li:hover {
+    box-shadow: 0 2px 12px rgba(25, 118, 210, 0.10);
+    background: #e3f2fd;
+}
+
+.welcome-home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+    padding-top: 32px;
+    padding-bottom: 32px;
+}
+
+.welcome-section {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.welcome-section h2 {
+    font-size: 2em;
+    color: #1976d2;
+    margin-bottom: 12px;
+}
+
+.welcome-desc {
+    font-size: 1.15em;
+    color: #444;
+    margin-bottom: 24px;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 12px 32px;
+    background: #1976d2;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 2px 8px rgba(25, 118, 210, 0.10);
+    transition: background 0.2s, transform 0.2s;
+    margin-bottom: 18px;
+}
+
+.cta-button:hover {
+    background: #1565c0;
+    color: #fff;
+    transform: translateY(-2px) scale(1.03);
+}
+
+.instructions {
+    background: #e3f2fd;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(25, 118, 210, 0.06);
+    padding: 24px 18px;
+    max-width: 420px;
+    margin: 0 auto;
+}
+
+.instructions h3 {
+    color: #1976d2;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+.instructions ul {
+    list-style: disc inside;
+    color: #444;
+    font-size: 1em;
+}
+
+.instructions li {
+    margin-bottom: 8px;
+}
+
+@media (max-width: 900px) {
+    main.container {
+        padding: 12px 4vw;
+    }
+    #caixas-status {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .caixa-status {
+        min-width: unset;
+    }
+    .header-content {
+        padding: 18px 4vw 0 4vw;
+    }
+    .main-header nav ul {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 600px) {
+    .main-header h1 {
+        font-size: 1.3em;
+    }
+    .form-itens {
+        flex-direction: column;
+        gap: 10px;
+    }
+    main.container {
+        padding: 8px 2vw;
+    }
+}
